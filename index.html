@@ -3,48 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memory</title>
+    <title>Memory Book</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <button class="close hide">x</button>
+    <!-- Floating cute decorations -->
+    <div class="bg-shape shape1">🎀</div>
+    <div class="bg-shape shape2">✨</div>
+    <div class="bg-shape shape3">🌸</div>
+
+    <button class="close hide">✖</button>
     <div class="table">
+        <!-- BOOK 1 -->
         <div class="book deactive" id="b1">
+            <div class="spine"></div>
             <div class="paper cover" id="3">
                 <div class="front">
-                    Album book<br>
-                    Solo-Yogyakarta<br>
+                    <div class="cover-design">
+                        Album Book<br>
+                        <span>Solo-Yogyakarta</span>
+                        <div class="love-badge">✦</div>
+                    </div>
                 </div>
-                <div class="back">
-                </div>
+                <div class="back"></div>
             </div>
         </div>
+        <!-- BOOK 2 -->
         <div class="book deactive" id="b2">
+            <div class="spine"></div>
             <div class="paper cover" id="3">
                 <div class="front">
-                   Album Book<br>
-                   Limpung
+                    <div class="cover-design">
+                        Album Book<br>
+                        <span>Limpung</span>
+                        <div class="love-badge">✦</div>
+                    </div>
                 </div>
-                <div class="back">
-                </div>
+                <div class="back"></div>
             </div>
         </div>
+        <!-- BOOK 3 -->
         <div class="book deactive" id="b3">
+            <div class="spine"></div>
             <div class="paper cover" id="3">
                 <div class="front">
-                    Album Book<br>
-                    Pagilaran
+                    <div class="cover-design">
+                         Album Book<br>
+                         <span>Pagilaran</span>
+                         <div class="love-badge">✦</div>
+                    </div>
                 </div>
-                <div class="back">
-                </div>
+                <div class="back"></div>
             </div>
         </div>
     </div>
+
     <div class="pilihan">
-        <button class="choose" id="c1">Pilih</button>
-        <button class="choose" id="c2">Pilih</button>
-        <button class="choose" id="c3">Pilih</button>
+        <button class="choose" id="c1">Buka Volume 1</button>
+        <button class="choose" id="c2">Buka Volume 2</button>
+        <button class="choose" id="c3">Buka Volume 3</button>
     </div>
+    
     <script src="main.js"></script>
 </body>
 </html>

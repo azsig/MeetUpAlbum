@@ -1,235 +1,228 @@
-*{
-    padding: 0;
-    margin: 0;
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Nunito:wght@400;700&display=swap');
+
+* {
+    padding: 0; margin: 0; box-sizing: border-box;
 }
 
-body{
-    width: 100vw;
-    height: 100vh;
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    
-}
-.table{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    perspective: 100px;
+body {
+    width: 100vw; height: 100vh;
+    background: radial-gradient(circle at center, #ffdce0 0%, #ffb6c1 100%);
+    font-family: 'Nunito', sans-serif;
+    display: flex; flex-direction: column; justify-content: center;
+    overflow: hidden;
 }
 
-.pilihan{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-button{
-    width: 40px;
-    
-    margin: 0 100px 0 100px;
-}
-
-
-.book{
-    width: 240px;
-    height: 320px;
-    display: flex;
-    align-items: center;
-    position: relative;
-    transition: 2s;
-}
-
-body .hide{
-    display: none;
-}
-
-body .down{
-    width: 0;
-    margin: 0;
-    height: 0;
-}
-
-.deactive{
-    transform: rotateX(5deg);
-    width:120px;
-    height:160px;
-    margin: 50px;
-}
-
-.deactive .cover{
-    font-size: 0.9em;
-}
-
-.paper{
-    transform-origin: left;
-    transition: 1s;
-    perspective: 900px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.close{
+.bg-shape {
     position: absolute;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    border: 2px solid black;
-    font-size: 1.4em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 20px;
-    right: 20px;
-}
-
-
-
-.active{
-    transform: rotateX(0deg);
-    
-}
-
-
-.cover,
-.backCover{
-    width: 100%;
-    height: 100%;
-    color: wheat;
-    background-color: rgb(59, 43, 24);
-    border-radius: 0 10% 10% 0;
-    position: absolute;
-    box-shadow: 1px 1px 8px gray;
-}
-
-.page{
-    width: 95%;
-    height: 95%;
-    background-color: rgb(211, 199, 199);
-    position: absolute;
-    border-left: 3px solid #252520;
-}
-
-#img1,
-#img2,
-#img{
-    position: absolute;
-}
-
-#img1,
-#img2{
-    width: 40%;
-    border: 5px solid white;
-}
-
-#img1{
-    left: 10%;
-    top: 5%;
-    transform: rotate(-20deg);
-}
-
-#img2{
-    right: 10%;
-    bottom: 5%;
-    transform: rotate(20deg);
-}
-
-#img{
-    width: 70%;
-    border: 5px solid white;
-}
-
-
-.front {
-    backface-visibility: hidden;
-}
-
-.front,
-.back{
-    width: 100%;
-    height: 100%;
-    background-color: rgb(211, 199, 199);
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    position: absolute;
-    transition: 0.8s;
-    
-}
-
-.cover{
-    z-index: 1;
-    font-size: 1.6em;
-}
-
-.cover .front,
-.backCover .front{
-    width: 90%;
-    height: 90%;
-    border-radius: 0 10% 10% 0;
-    background-color: rgb(59, 43, 24);
-    border: 2px black dashed;
-}
-
-.cover .back,
-.backCover .back{
-    width: 90%;
-    height: 90%;
-    border-radius: 10% 0 0 10%;
-    background-color: rgb(59, 43, 24);
-    border: 2px black dashed;
-}
-
-.back {
-    transform: rotateY(-180deg)
-}
-
-.front {
-    z-index: 1;
-}
-
-.back {
+    font-size: 2rem;
+    opacity: 0.6;
+    animation: float 6s ease-in-out infinite;
     z-index: 0;
 }
+.shape1 { top: 15%; left: 20%; animation-delay: 0s; font-size: 2.5rem; }
+.shape2 { bottom: 20%; right: 15%; animation-delay: 1.5s; font-size: 3rem; }
+.shape3 { top: 25%; right: 25%; animation-delay: 3s; font-size: 2rem; }
 
-.flipped{
-    transform: rotateY(-180deg);
+@keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(15deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
 }
 
-.flipped .front,
-.flipped .back {
-    transform: rotateY(-180deg)
+.table {
+    display: flex; align-items: center; justify-content: center;
+    position: relative; perspective: 1800px; height: 80vh; z-index: 10;
 }
 
-@media (max-width: 768px){
-    .deactive{
-        margin: 10px;
-    }
-    .choose{
-        margin: 0 40px 0 40px
-    }
+.pilihan {
+    width: 100%; display: flex; justify-content: center; align-items: center;
+    gap: 30px; padding-bottom: 20px; z-index: 10;
 }
 
-@media (max-width: 425px ) {
+button {
+    padding: 12px 25px; cursor: pointer; font-weight: 700; border: none;
+    border-radius: 30px; background: #fff; color: #ff758c; font-size: 1.1rem;
+    box-shadow: 0 5px 15px rgba(255, 117, 140, 0.4); transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    font-family: 'Nunito', sans-serif; letter-spacing: 1px; text-transform: uppercase;
+}
+button:hover { 
+    background: #ff758c; color: #fff;
+    transform: translateY(-5px) scale(1.05); 
+    box-shadow: 0 10px 25px rgba(255, 117, 140, 0.6); 
+}
 
-    .book{
-        width: 18rem;
-        height: 24rem;
-        
+.book {
+    width: 290px; height: 400px; display: flex; align-items: center; position: relative;
+    transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1); transform-style: preserve-3d;
+}
+
+.spine {
+    position: absolute; width: 15px; height: 100%; bg; left: -15px; top: 0;
+    background: linear-gradient(to right, #e88698, #ffb6b9);
+    transform-origin: right; transform: rotateY(-90deg);
+    border-radius: 5px 0 0 5px; box-shadow: inset 2px 0 5px rgba(0,0,0,0.1);
+}
+
+body .hide { display: none !important; }
+body .down { opacity: 0; transform: translateY(60px) scale(0.85); pointer-events: none; }
+
+.deactive {
+    transform: rotateX(15deg) rotateY(-20deg) scale(0.65);
+    margin: 15px; cursor: pointer;
+    box-shadow: 20px 25px 40px rgba(180, 80, 100, 0.25); border-radius: 10px;
+}
+.deactive:hover { transform: rotateX(10deg) rotateY(-10deg) scale(0.7); }
+.deactive .spine {
+    box-shadow: -10px 5px 20px rgba(0,0,0,0.3);
+}
+
+.paper {
+    position: absolute; width: 100%; height: 100%; top: 0; left: 0;
+    transform-origin: left center;
+    transition: transform 1.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transform-style: preserve-3d; cursor: pointer;
+}
+
+.close {
+    position: absolute; width: 50px; height: 50px; border-radius: 50%;
+    background: #fff; color: #ff5277; display: flex; justify-content: center; align-items: center;
+    top: 30px; right: 40px; font-size: 1.5em; cursor: pointer; box-shadow: 0 5px 15px rgba(255, 117, 140, 0.4);
+    z-index: 100; border: none; padding-bottom: 2px; transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.close:hover { background: #ff5277; color: white; transform: rotate(90deg) scale(1.1); }
+
+.active { transform: rotateX(0deg); }
+
+.cover, .backCover {
+    width: 100%; height: 100%;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+    border-radius: 3px 12px 12px 3px; position: absolute;
+    box-shadow: inset 4px 0 15px rgba(255,255,255,0.4), 8px 15px 30px rgba(0,0,0,0.25);
+    display: flex; align-items: center; justify-content: center;
+}
+.backCover { border-radius: 12px 3px 3px 12px; }
+
+.page {
+    width: 97%; height: 97%; top: 1.5%; left: 0%;
+    background: #fff9fa; position: absolute; border-radius: 2px 10px 10px 2px;
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.02), 3px 3px 8px rgba(0,0,0,0.08);
+    border-left: 2px solid #f0e6e8;
+    background-image: radial-gradient(#ffe0e5 1px, transparent 1px);
+    background-size: 15px 15px; /* Cute dot pattern */
+}
+
+.front, .back {
+    width: 100%; height: 100%; backface-visibility: hidden;
+    position: absolute; top: 0; left: 0; display: flex; justify-content: center; align-items: center;
+    text-align: center;
+}
+.front {
+    z-index: 1; border-radius: 2px 10px 10px 2px;
+}
+.back {
+    transform: rotateY(-180deg); z-index: 0; border-radius: 10px 2px 2px 10px;
+    /* Cute solid color for the back of pages */
+    background: #fffdfd;
+}
+
+.cover .front, .backCover .front, .cover .back, .backCover .back {
+    width: 90%; height: 90%; background: transparent;
+    border: 3px dashed #fff; border-radius: 4px 12px 12px 4px;
+    display: flex; justify-content: center; align-items: center;
+}
+.cover .back, .backCover .back { border-radius: 12px 4px 4px 12px; }
+
+.cover-design {
+    font-family: 'Caveat', cursive; font-size: 2.8rem; color: #fff; text-shadow: 1px 2px 4px rgba(220,100,120,0.5);
+    display: flex; flex-direction: column; align-items: center; line-height: 1.1;
+}
+.cover-design span { font-size: 1.6rem; margin-top: 10px; font-family: 'Nunito', sans-serif; font-weight: 700; letter-spacing: 1px; color: #fff5f6; }
+.love-badge { 
+    margin-top: 15px; background: #fff; color: #ff758c; width: 45px; height: 45px; 
+    border-radius: 50%; display: flex; justify-content: center; align-items: center; 
+    font-size: 1.5rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+}
+
+.flipped { transform: rotateY(-180deg); }
+
+
+/* POLAROID SCRAPBOOK STYLE */
+.polaroid {
+    background: #fff; padding: 6px 6px 15px 6px;
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.1);
+    position: absolute; transition: transform 0.2s, z-index 0.2s;
+    border: 1px solid #f5f5f5; display: flex; flex-direction: column; cursor: pointer;
+}
+.polaroid img {
+    width: 100%; height: 100%; object-fit: cover; background: #fdfdfd; border: 1px solid #eee;
+}
+
+.tape {
+    position: absolute; top: -8px; left: 50%; transform: translateX(-50%) rotate(-2deg);
+    width: 40px; height: 15px; background-color: rgba(255, 182, 193, 0.8);
+    z-index: 10; box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.polaroid:hover {
+    transform: scale(1.15) translateZ(40px) !important;
+    z-index: 50 !important; box-shadow: 5px 10px 20px rgba(255, 117, 140, 0.3);
+}
+
+/* 1 PHOTO */
+.layout-1 .polaroid { width: 65%; height: 50%; top: 25%; left: 17.5%; transform: rotate(-2deg); }
+
+/* 2 PHOTOS */
+.layout-2 .polaroid { width: 45%; height: 35%; }
+.layout-2 .polaroid:nth-child(1) { top: 10%; left: 10%; transform: rotate(-5deg); }
+.layout-2 .polaroid:nth-child(2) { bottom: 10%; right: 10%; transform: rotate(5deg); }
+
+/* 3 PHOTOS */
+.layout-3 .polaroid { width: 35%; height: 30%; }
+.layout-3 .polaroid:nth-child(1) { top: 5%; left: 10%; transform: rotate(-8deg); }
+.layout-3 .polaroid:nth-child(2) { top: 35%; right: 8%; transform: rotate(6deg); }
+.layout-3 .polaroid:nth-child(3) { bottom: 5%; left: 15%; transform: rotate(-3deg); }
+
+/* 4 PHOTOS */
+.layout-4 .polaroid { width: 32%; height: 28%; }
+.layout-4 .polaroid:nth-child(1) { top: 7%; left: 7%; transform: rotate(-6deg); }
+.layout-4 .polaroid:nth-child(2) { top: 15%; right: 7%; transform: rotate(8deg); }
+.layout-4 .polaroid:nth-child(3) { bottom: 15%; left: 7%; transform: rotate(-4deg); }
+.layout-4 .polaroid:nth-child(4) { bottom: 7%; right: 7%; transform: rotate(5deg); }
+
+@media (max-width: 768px) {
+    .table { height: 70vh; }
+    .book { width: 40vw; height: 55vw; max-width: 250px; max-height: 340px; }
+    .deactive { margin: 8px; transform: rotateX(15deg) rotateY(-20deg) scale(0.6); }
+    button { margin: 0 5px; font-size: 0.9rem; padding: 10px 14px; }
+}
+
+@media (max-width: 480px) {
+    .bg-shape { display: none; }
+    
+    /* Make the base book fit exactly inside the mobile screen without scrolling when opened */
+    /* When opened, right side moves 50% = 22.5vw. Left side flips to -45vw. Total width = 90vw. */
+    .book { width: 44vw; height: 60vw; }
+    
+    /* Overlap the deactive books so they look cute and don't take up too much width */
+    .table { display: flex; flex-direction: row; flex-wrap: wrap; height: 75vh; }
+    
+    /* They remain books, we just scale them down further and overlap them */
+    .deactive { 
+        transform: rotateX(10deg) rotateY(-10deg) scale(0.5) rotate(calc(var(--angle, 0) * 10deg));
+        margin: -4vw; /* Overlap them */
     }
-
-    .deactive{
-        width: 6rem;
-        height: 8rem;
-        margin: 10px
-    }
-
-    .choose{
-        margin: 0 40px 0 40px
-    }   
+    
+    .deactive:nth-child(1) { --angle: -2; z-index: 1; }
+    .deactive:nth-child(2) { --angle: 0.5; z-index: 3; margin-top: 5vh; }
+    .deactive:nth-child(3) { --angle: 2; z-index: 2; }
+    
+    .pilihan { flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; width: 100%; }
+    button { padding: 8px 14px; font-size: 0.8rem; margin: 2px; }   
+    
+    /* Resize Cover Elements */
+    .cover-design { font-size: 1.8rem; }
+    .cover-design span { font-size: 0.9rem; }
+    
+    /* Adjust tape for tiny polaroids */
+    .tape { height: 10px; width: 35px; top: -5px; box-shadow: 0 1px 2px rgba(0,0,0,0.1); }
 }
